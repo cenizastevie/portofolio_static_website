@@ -35,17 +35,22 @@ function App() {
                   href="mailto:steven.ceniza@email.com"
                   className="social-btn d-flex align-items-center justify-content-center"
                   style={{
-                    background: '#007bff',
+                    background: 'linear-gradient(90deg, #007bff 60%, #6ea8fe 100%)',
                     color: 'white',
-                    borderRadius: 8,
-                    padding: '12px 24px',
-                    fontWeight: 500,
-                    fontSize: '1.1rem',
-                    boxShadow: '0 2px 8px #b6d4fe',
+                    borderRadius: 12,
+                    padding: '12px 28px',
+                    fontWeight: 600,
+                    fontSize: '1.5rem',
+                    boxShadow: '0 2px 12px #b6d4fe77',
                     textDecoration: 'none',
+                    letterSpacing: '0.02em',
+                    transition: 'transform 0.15s',
                   }}
+                  onMouseOver={e => e.currentTarget.style.transform = 'scale(1.07)'}
+                  onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
+                  aria-label="Email"
                 >
-                  <i className="fas fa-envelope me-2"></i>
+                  <i className="fas fa-envelope"></i>
                 </a>
                 <a
                   href="https://linkedin.com/in/steven-ceniza"
@@ -53,17 +58,22 @@ function App() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    background: '#007bff',
+                    background: 'linear-gradient(90deg, #007bff 60%, #6ea8fe 100%)',
                     color: 'white',
-                    borderRadius: 8,
-                    padding: '12px 24px',
-                    fontWeight: 500,
-                    fontSize: '1.1rem',
-                    boxShadow: '0 2px 8px #b6d4fe',
+                    borderRadius: 12,
+                    padding: '12px 28px',
+                    fontWeight: 600,
+                    fontSize: '1.5rem',
+                    boxShadow: '0 2px 12px #b6d4fe77',
                     textDecoration: 'none',
+                    letterSpacing: '0.02em',
+                    transition: 'transform 0.15s',
                   }}
+                  onMouseOver={e => e.currentTarget.style.transform = 'scale(1.07)'}
+                  onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
+                  aria-label="LinkedIn"
                 >
-                  <i className="fab fa-linkedin me-2"></i>
+                  <i className="fab fa-linkedin"></i>
                 </a>
                 <a
                   href="https://github.com/steven-ceniza"
@@ -71,17 +81,22 @@ function App() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    background: '#007bff',
+                    background: 'linear-gradient(90deg, #007bff 60%, #6ea8fe 100%)',
                     color: 'white',
-                    borderRadius: 8,
-                    padding: '12px 24px',
-                    fontWeight: 500,
-                    fontSize: '1.1rem',
-                    boxShadow: '0 2px 8px #b6d4fe',
+                    borderRadius: 12,
+                    padding: '12px 28px',
+                    fontWeight: 600,
+                    fontSize: '1.5rem',
+                    boxShadow: '0 2px 12px #b6d4fe77',
                     textDecoration: 'none',
+                    letterSpacing: '0.02em',
+                    transition: 'transform 0.15s',
                   }}
+                  onMouseOver={e => e.currentTarget.style.transform = 'scale(1.07)'}
+                  onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
+                  aria-label="GitHub"
                 >
-                  <i className="fab fa-github me-2"></i>
+                  <i className="fab fa-github"></i>
                 </a>
               </div>
             </Col>
