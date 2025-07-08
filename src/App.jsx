@@ -12,7 +12,7 @@ function App() {
               <h1
                 className="hero-hi"
                 style={{
-                  fontSize: '8vw',
+                  fontSize: '13vw',
                   fontWeight: 500,
                   color: '#007bff',
                   lineHeight: 1,
@@ -20,19 +20,14 @@ function App() {
                   textShadow: '2px 4px 16px #b6d4fe',
                 }}
               >
-                HI!
+                Hi!
               </h1>
             </Col>
             <Col lg={8} className="d-flex flex-column align-items-center align-items-lg-start">
               <div style={{ width: '100%' }}>
-                <p style={{ color: '#6ea8fe', fontSize: '1.5rem', fontWeight: 600, marginBottom: 0 }}>
-                  My name is Steven Joseph Ceniza, Welcome to my portfolio! I am a software engineer for 8 years.
-                </p>
-                <p style={{ color: '#6ea8fe', fontSize: '1.5rem', fontWeight: 600, marginBottom: 0 }}>
+                <p style={{ color: '#6ea8fe', fontSize: '1.5rem', fontWeight: 600, marginBottom: 0, marginTop: 40 }}>
                   {/* Empty for spacing, covered by HI! */}
-                </p>
-                <p style={{ color: '#6ea8fe', fontSize: '1.1rem', marginTop: '2.5rem', marginBottom: '1.5rem', fontWeight: 400 }}>
-                  I'm really interested in landing a role that's related with AWS AI/ML and Data Pipelines
+                  My name is Steven Joseph Ceniza, Welcome to my portfolio! I am a software engineer for 8 years. I'm really interested in landing a role that's related with AWS AI/ML, LLM and Data Pipelines.
                 </p>
               </div>
               <div className="d-flex gap-3 mt-2">
@@ -50,7 +45,7 @@ function App() {
                     textDecoration: 'none',
                   }}
                 >
-                  <i className="fas fa-envelope me-2"></i> Email
+                  <i className="fas fa-envelope me-2"></i>
                 </a>
                 <a
                   href="https://linkedin.com/in/steven-ceniza"
@@ -68,7 +63,7 @@ function App() {
                     textDecoration: 'none',
                   }}
                 >
-                  <i className="fab fa-linkedin me-2"></i> LinkedIn
+                  <i className="fab fa-linkedin me-2"></i>
                 </a>
                 <a
                   href="https://github.com/steven-ceniza"
@@ -86,7 +81,7 @@ function App() {
                     textDecoration: 'none',
                   }}
                 >
-                  <i className="fab fa-github me-2"></i> Github
+                  <i className="fab fa-github me-2"></i>
                 </a>
               </div>
             </Col>
@@ -94,10 +89,10 @@ function App() {
            <Row>
           <Col>
             <h2
-              className="work-title text-center"
-              style={{ color: '#007bff', fontWeight: 700, marginBottom: 40 }}
+              className="work-title text-left"
+              style={{ color: '#007bff', fontWeight: 700, marginBottom: 40, marginTop: 60, fontSize: 30  }}
             >
-              Here's some of my work
+              Here's some of my work:
             </h2>
           </Col>
         </Row>
@@ -207,8 +202,8 @@ function App() {
           <Row>
             <Col md={6} className="mb-4 mb-md-0">
               <h5 style={{ fontWeight: 700 }}>Steven Joseph Ceniza</h5>
-              <p className="mb-2">Software Engineer & AWS AI/ML Enthusiast</p>
-              <p className="text-muted">Building innovative solutions with cutting-edge technology</p>
+              <p className="mb-2">Software Engineer</p>
+              <p  style={{ color: '#fff' }}>Certified AWS Solutions Architect Associate</p>
             </Col>
             <Col md={6} className="d-flex flex-column align-items-md-end align-items-start">
               <h6>Connect with me</h6>
@@ -244,7 +239,7 @@ function App() {
           <hr className="my-4" style={{ borderColor: '#495057' }} />
           <Row>
             <Col className="text-center">
-              <p className="mb-0 text-muted">© 2025 Steven Joseph Ceniza. All rights reserved.</p>
+              <p className="mb-0">© 2025 Steven Joseph Ceniza. All rights reserved.</p>
             </Col>
           </Row>
         </Container>
