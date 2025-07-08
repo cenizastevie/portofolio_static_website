@@ -27,7 +27,7 @@ function App() {
               <div style={{ width: '100%' }}>
                 <p style={{ color: '#6ea8fe', fontSize: '1.5rem', fontWeight: 600, marginBottom: 0, marginTop: 40 }}>
                   {/* Empty for spacing, covered by HI! */}
-                  My name is Steven Joseph Ceniza, Welcome to my portfolio! I am a software engineer for 8 years. I'm really interested in landing a role that's related with AWS AI/ML, LLM and Data Pipelines.
+                  My name is Steven Joseph Ceniza. Welcome to my portfolio! I am a software engineer with 8 years of experience. I’m particularly interested in roles related to AWS, AI/ML, LLMs, and data pipelines.
                 </p>
               </div>
               <div className="d-flex gap-3 mt-2">
