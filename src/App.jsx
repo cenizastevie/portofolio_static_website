@@ -7,20 +7,20 @@ const projects = [
   {
     image: '/projects/aws_chat_buddy.png',
     title: 'AWS Chat Buddy',
-    description: 'A language chat assistant powered by AWS AI/ML services, providing real-time language support and semantic search capabilities.',
-    repo: 'https://github.com/steven-ceniza/aws-chat-buddy',
+    description: 'A full-stack language learning chatbot powered by AWS Bedrock (Claude/Titan) for LLM, a Zappa Flask backend for API/session/LLM logic, and a modern React frontend hosted on S3 + CloudFront. Scenario-based templates enable interactive English practice with grammar correction and progress tracking.',
+    repo: 'https://github.com/cenizastevie/aws_language_chat_buddy',
   },
   {
     image: '/projects/aws_semantic_search.png',
     title: 'AWS Semantic Search',
-    description: 'A semantic search engine leveraging AWS services for fast, relevant document retrieval and natural language understanding.',
-    repo: 'https://github.com/steven-ceniza/aws-semantic-search',
+    description: 'This project is a serverless AWS application for real-time semantic search. It uses a Flask backend deployed with Zappa, enabling scalable serverless execution. The backend leverages AWS Bedrock for generating text embeddings and stores/searches data in OpenSearch. Real-time communication between the backend and a React frontend is handled via WebSockets, allowing users to perform fast, semantic searches and receive instant results. The React frontend provides an interactive user interface for search queries and displaying results.',
+    repo: 'https://github.com/cenizastevie/aws_semantic_search_app',
   },
   {
     image: '/projects/aws_semantic_search_ingestion.png',
     title: 'AWS Semantic Search Ingestion',
-    description: 'Automated data ingestion pipeline for semantic search, integrating AWS Lambda, S3, and more for scalable document processing.',
-    repo: 'https://github.com/steven-ceniza/aws-semantic-search-ingestion',
+    description: 'This AWS Semantic Search Ingestion project processes Common Crawl WARC files to extract and analyze news content for semantic search capabilities. When triggered, a Lambda function reads manifest files containing WARC file listings and launches Fargate tasks to download and extract article content from news website domains within the WARC files. The extracted articles are streamed through Kinesis Data Firehose to an S3 bucket, which then triggers SageMaker batch transform jobs that summarize the content, perform sentiment analysis, and generate vector embeddings suitable for OpenSearch indexing. The system uses containerized processing with ECR, automated CI/CD deployment through CodePipeline, and scales automatically to handle large volumes of Common Crawl data for building comprehensive news content search indexes.',
+    repo: 'https://github.com/cenizastevie/aws_semantic_search_ingestion',
   },
 ];
 
@@ -149,7 +149,7 @@ function App() {
                           className="d-block"
                           style={{
                             width: '100%',
-                            maxWidth: '1200px', // Make images wider
+                            maxWidth: '1200px',
                             margin: '0 auto',
                             borderRadius: 12,
                             objectFit: 'cover',
@@ -159,6 +159,24 @@ function App() {
                           src={project.image}
                           alt={project.title}
                         />
+                        <div
+                          style={{
+                            position: 'absolute',
+                            top: 30,
+                            left: 30,
+                            background: 'rgba(0,123,255,0.85)',
+                            color: 'white',
+                            padding: '10px 24px',
+                            borderRadius: 8,
+                            fontWeight: 700,
+                            fontSize: '1.3rem',
+                            boxShadow: '0 2px 8px #b6d4fe',
+                            zIndex: 2,
+                            maxWidth: '70%',
+                          }}
+                        >
+                          {project.title}
+                        </div>
                         <button
                           className="view-repo-btn"
                           style={{
