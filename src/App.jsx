@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Carousel } from 'react-bootstrap';
+import PortfolioNavbar from './PortfolioNavbar';
+import ProjectPage from './ProjectPage';
+
+const projects = [
+  {
+    image: '/projects/aws_chat_buddy.png',
+    title: 'AWS Chat Buddy',
+    description: 'A language chat assistant powered by AWS AI/ML services, providing real-time language support and semantic search capabilities.',
+    repo: 'https://github.com/steven-ceniza/aws-chat-buddy',
+  },
+  {
+    image: '/projects/aws_semantic_search.png',
+    title: 'AWS Semantic Search',
+    description: 'A semantic search engine leveraging AWS services for fast, relevant document retrieval and natural language understanding.',
+    repo: 'https://github.com/steven-ceniza/aws-semantic-search',
+  },
+  {
+    image: '/projects/aws_semantic_search_ingestion.png',
+    title: 'AWS Semantic Search Ingestion',
+    description: 'Automated data ingestion pipeline for semantic search, integrating AWS Lambda, S3, and more for scalable document processing.',
+    repo: 'https://github.com/steven-ceniza/aws-semantic-search-ingestion',
+  },
+];
 
 function App() {
+  const [showProject, setShowProject] = useState(null);
   return (
     <div style={{ minHeight: '100vh', background: '#f8f9fa' }}>
+      <PortfolioNavbar />
       {/* Hero/Bio Section */}
       <div style={{ minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Container>
@@ -113,90 +138,70 @@ function App() {
         </Row>
         <Row>
           <Col>
-            <div className="position-relative" style={{ maxWidth: 900, margin: '0 auto' }}>
-              <Carousel>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="https://picsum.photos/900/400?random=1"
-                    alt="Project 1"
-                    style={{ borderRadius: 12, objectFit: 'cover', height: 400 }}
-                  />
-                  <a
-                    href="#"
-                    className="view-repo-btn"
-                    style={{
-                      position: 'absolute',
-                      bottom: 30,
-                      right: 30,
-                      background: '#007bff',
-                      color: 'white',
-                      borderRadius: 6,
-                      padding: '8px 18px',
-                      textDecoration: 'none',
-                      fontWeight: 500,
-                      fontSize: '1rem',
-                      boxShadow: '0 2px 8px #b6d4fe',
-                    }}
-                  >
-                    View Repository
-                  </a>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="https://picsum.photos/900/400?random=2"
-                    alt="Project 2"
-                    style={{ borderRadius: 12, objectFit: 'cover', height: 400 }}
-                  />
-                  <a
-                    href="#"
-                    className="view-repo-btn"
-                    style={{
-                      position: 'absolute',
-                      bottom: 30,
-                      right: 30,
-                      background: '#007bff',
-                      color: 'white',
-                      borderRadius: 6,
-                      padding: '8px 18px',
-                      textDecoration: 'none',
-                      fontWeight: 500,
-                      fontSize: '1rem',
-                      boxShadow: '0 2px 8px #b6d4fe',
-                    }}
-                  >
-                    View Repository
-                  </a>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="https://picsum.photos/900/400?random=3"
-                    alt="Project 3"
-                    style={{ borderRadius: 12, objectFit: 'cover', height: 400 }}
-                  />
-                  <a
-                    href="#"
-                    className="view-repo-btn"
-                    style={{
-                      position: 'absolute',
-                      bottom: 30,
-                      right: 30,
-                      background: '#007bff',
-                      color: 'white',
-                      borderRadius: 6,
-                      padding: '8px 18px',
-                      textDecoration: 'none',
-                      fontWeight: 500,
-                      fontSize: '1rem',
-                      boxShadow: '0 2px 8px #b6d4fe',
-                    }}
-                  >
-                    View Repository
-                  </a>
-                </Carousel.Item>
-              </Carousel>
+            <div className="position-relative" style={{ maxWidth: 1400, margin: '0 auto' }}>
+              {showProject === null ? (
+                <>
+                  <Carousel>
+                    {projects.map((project, idx) => (
+                      <Carousel.Item key={project.title}>
+                        <img
+                          className="d-block"
+                          style={{
+                            width: '100%',
+                            maxWidth: '1200px', // Make images wider
+                            margin: '0 auto',
+                            borderRadius: 12,
+                            objectFit: 'cover',
+                            height: 400,
+                            display: 'block',
+                          }}
+                          src={project.image}
+                          alt={project.title}
+                        />
+                        <button
+                          className="view-repo-btn"
+                          style={{
+                            position: 'absolute',
+                            bottom: 30,
+                            right: 30,
+                            background: '#007bff',
+                            color: 'white',
+                            borderRadius: 6,
+                            padding: '8px 18px',
+                            textDecoration: 'none',
+                            fontWeight: 500,
+                            fontSize: '1rem',
+                            boxShadow: '0 2px 8px #b6d4fe',
+                            border: 'none',
+                            cursor: 'pointer',
+                          }}
+                          onClick={() => setShowProject(idx)}
+                        >
+                          Read More
+                        </button>
+                      </Carousel.Item>
+                    ))}
+                  </Carousel>
+                  <style>{`
+                    .carousel-control-next, .carousel-control-prev {
+                      filter: none !important;
+                    }
+                    .carousel-control-next-icon, .carousel-control-prev-icon {
+                      background-color: #007bff !important;
+                      border-radius: 0;
+                      width: 30px;
+                      height: 30px;
+                    }
+                  `}</style>
+                </>
+              ) : (
+                <ProjectPage
+                  image={projects[showProject].image}
+                  title={projects[showProject].title}
+                  description={projects[showProject].description}
+                  repo={projects[showProject].repo}
+                />
+              )}
             </div>
           </Col>
         </Row>
@@ -205,7 +210,7 @@ function App() {
 
       {/* Work Section */}
       <Container className="work-section mb-5">
-        
+        {/* You can add more content here if needed */}
       </Container>
 
       {/* Footer */}

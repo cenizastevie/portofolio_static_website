@@ -1,0 +1,53 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Simple static website hosting for AWS Language Chat Buddy React Frontend'
+
+
+Resources:
+  # S3 Bucket for hosting static website
+  PortfolioWebsite:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: stevie-portfolio-static-website
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+      CorsConfiguration:
+        CorsRules:
+          - AllowedHeaders:
+              - "*"
+            AllowedMethods:
+              - GET
+              - HEAD
+            AllowedOrigins:
+              - "*"
+            MaxAge: 3600
+
+  PortfolioWebsiteBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref PortfolioWebsite
+      PolicyDocument:
+        Statement:
+          - Sid: PublicReadGetObject
+            Effect: Allow
+            Principal: "*"
+            Action: s3:GetObject
+            Resource: !Sub "arn:aws:s3:::${PortfolioWebsite}/*"
+
+Outputs:
+  WebsiteURL:
+    Description: URL of the static website
+    Value: !GetAtt PortfolioWebsite.WebsiteURL
+    Export:
+      Name: PortfolioWebsiteURL
+
+  BucketName:
+    Description: S3 bucket name for uploading files
+    Value: !Ref PortfolioWebsite
+    Export:
+      Name: PortfolioWebsite
