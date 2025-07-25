@@ -57,7 +57,7 @@ function App() {
               </div>
               <div className="d-flex gap-3 mt-2">
                 <a
-                  href="mailto:steven.ceniza@email.com"
+                  href="mailto:cenizastevie@gmail.com"
                   className="social-btn d-flex align-items-center justify-content-center"
                   style={{
                     background: 'linear-gradient(90deg, #007bff 60%, #6ea8fe 100%)',
@@ -74,11 +74,12 @@ function App() {
                   onMouseOver={e => e.currentTarget.style.transform = 'scale(1.07)'}
                   onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
                   aria-label="Email"
+                  title="cenizastevie@gmail.com"
                 >
                   <i className="fas fa-envelope"></i>
                 </a>
                 <a
-                  href="https://linkedin.com/in/steven-ceniza"
+                  href="https://www.linkedin.com/in/steven-joseph-ceniza-377583207/"
                   className="social-btn d-flex align-items-center justify-content-center"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -101,7 +102,7 @@ function App() {
                   <i className="fab fa-linkedin"></i>
                 </a>
                 <a
-                  href="https://github.com/steven-ceniza"
+                  href="https://github.com/cenizastevie?tab=repositories"
                   className="social-btn d-flex align-items-center justify-content-center"
                   target="_blank"
                   rel="noopener noreferrer"
