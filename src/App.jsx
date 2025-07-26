@@ -6,18 +6,21 @@ import ProjectPage from './ProjectPage';
 const projects = [
   {
     image: '/projects/aws_chat_buddy.png',
+    diagram: '/projects/aws_chat_buddy_diagram.png',
     title: 'AWS Chat Buddy',
     description: 'A full-stack language learning chatbot powered by AWS Bedrock (Claude/Titan) for LLM, a Zappa Flask backend for API/session/LLM logic, and a modern React frontend hosted on S3 + CloudFront. Scenario-based templates enable interactive English practice with grammar correction and progress tracking.',
     repo: 'https://github.com/cenizastevie/aws_language_chat_buddy',
   },
   {
     image: '/projects/aws_semantic_search.png',
+    diagram: '/projects/aws_semantic_search_diagram.png',
     title: 'AWS Semantic Search',
     description: 'This project is a serverless AWS application for real-time semantic search. It uses a Flask backend deployed with Zappa, enabling scalable serverless execution. The backend leverages AWS Bedrock for generating text embeddings and stores/searches data in OpenSearch. Real-time communication between the backend and a React frontend is handled via WebSockets, allowing users to perform fast, semantic searches and receive instant results. The React frontend provides an interactive user interface for search queries and displaying results.',
     repo: 'https://github.com/cenizastevie/aws_semantic_search_app',
   },
   {
     image: '/projects/aws_semantic_search_ingestion.png',
+    diagram: '/projects/aws_semantic_search_ingestion_diagram.png',
     title: 'AWS Semantic Search Ingestion',
     description: 'This AWS Semantic Search Ingestion project processes Common Crawl WARC files to extract and analyze news content for semantic search capabilities. When triggered, a Lambda function reads manifest files containing WARC file listings and launches Fargate tasks to download and extract article content from news website domains within the WARC files. The extracted articles are streamed through Kinesis Data Firehose to an S3 bucket, which then triggers SageMaker batch transform jobs that summarize the content, perform sentiment analysis, and generate vector embeddings suitable for OpenSearch indexing. The system uses containerized processing with ECR, automated CI/CD deployment through CodePipeline, and scales automatically to handle large volumes of Common Crawl data for building comprehensive news content search indexes.',
     repo: 'https://github.com/cenizastevie/aws_semantic_search_ingestion',
@@ -145,20 +148,23 @@ function App() {
                   <Carousel>
                     {projects.map((project, idx) => (
                       <Carousel.Item key={project.title}>
-                        <img
-                          className="d-block"
-                          style={{
-                            width: '100%',
-                            maxWidth: '1200px',
-                            margin: '0 auto',
-                            borderRadius: 12,
-                            objectFit: 'cover',
-                            height: 400,
-                            display: 'block',
-                          }}
-                          src={project.image}
-                          alt={project.title}
-                        />
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                          <img
+                            className="d-block"
+                            style={{
+                              width: '100%',
+                              maxWidth: '1200px',
+                              borderRadius: 12,
+                              objectFit: 'contain',
+                              height: 400,
+                              display: 'block',
+                              background: '#fff',
+                              boxShadow: '0 2px 8px #b6d4fe44',
+                            }}
+                            src={project.diagram}
+                            alt={project.title + ' Diagram'}
+                          />
+                        </div>
                         <div
                           style={{
                             position: 'absolute',
@@ -216,6 +222,7 @@ function App() {
               ) : (
                 <ProjectPage
                   image={projects[showProject].image}
+                  diagram={projects[showProject].diagram}
                   title={projects[showProject].title}
                   description={projects[showProject].description}
                   repo={projects[showProject].repo}
