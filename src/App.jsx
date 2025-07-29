@@ -130,11 +130,26 @@ function App() {
               </div>
             </Col>
           </Row>
-           <Row>
+        <Row>
+          <Col>
+            <h2
+              className="cert-title text-left"
+              style={{ color: '#007bff', fontWeight: 700, marginBottom: 16, marginTop: 40, fontSize: 30 }}
+            >
+              Current Certifications: 
+            </h2>
+            <div style={{ display: 'flex', gap: 20, marginBottom: 24 }}>
+              <div></div>
+              <div data-iframe-width="420" data-iframe-height="270" style={{paddingLeft: 16}} data-share-badge-id="3db8b26c-d478-4d80-b3c2-5796a5fb808f" data-share-badge-host="https://www.credly.com"></div>
+              <div data-iframe-width="420" data-iframe-height="270" data-share-badge-id="517c3939-57ac-4cb3-aef5-2f292de87aad" data-share-badge-host="https://www.credly.com"></div>
+            </div>
+          </Col>
+        </Row>
+        <Row>
           <Col>
             <h2
               className="work-title text-left"
-              style={{ color: '#007bff', fontWeight: 700, marginBottom: 40, marginTop: 60, fontSize: 30  }}
+              style={{ color: '#007bff', fontWeight: 700, marginBottom: 40, marginTop: 20, fontSize: 30  }}
             >
               Here's some of my work:
             </h2>
